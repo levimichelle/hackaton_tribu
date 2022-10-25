@@ -9,8 +9,8 @@ import Screen
 
 def find_place():
     recieved_location = Screen.selection()
-    recieved_hobby = Screen.
-    for place in consts.DICT_PLACES_VOLUNTEER.items():
+    recieved_hobby = Screen.hobby_screen()
+    for place in consts.lst_of_keys():
         if recieved_location == consts.DICT_PLACES_VOLUNTEER[place][consts.LOCATION_INDEX] and \
                 recieved_hobby == consts.DICT_PLACES_VOLUNTEER[place][consts.HOBBY_INDEX]:
             return place

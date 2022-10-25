@@ -26,7 +26,7 @@ DICT_PLACES_VOLUNTEER = {
     "Robin Food": ["south", "cook", "In our volunteering place we cook food that otherwise will be destroyed "
                                     "and serve it to people for the price they can afford"]
 }
-
+lst_of_keys = DICT_PLACES_VOLUNTEER.keys()
 dict_len = len(DICT_PLACES_VOLUNTEER.keys())
 LOCATION_INDEX = 0
 HOBBY_INDEX = 1
