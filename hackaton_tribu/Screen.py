@@ -1,4 +1,5 @@
 import tkinter
+import get_place
 # from tkinter import messagebox
 
 def set_screen():
@@ -42,3 +43,13 @@ def selection_of_region():
 
 region_screen()
 app.mainloop()
+
+place_screen()
+
+def hobby_screen():
+    pass
+
+
+def show_volunteering():
+    place_name = get_place.find_place()
+    place_info = get_place.return_place_info()
