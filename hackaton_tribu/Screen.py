@@ -12,7 +12,7 @@ def introduction_screen():
     pass
 
 
-def place_screen():
+def region_screen():
     app = set_screen()
     var = tkinter.IntVar()
     label1 = tkinter.Label(app, text="What region are you from?", bg="lightblue", font=("David", 20))
@@ -26,7 +26,19 @@ def place_screen():
 
     south_button = tkinter.Radiobutton(app, text="south", bg="lightblue", variable=var, pady=5, padx=30,
                                        value=3, font=("David", 14)).pack(anchor=tkinter.CENTER)
+    return var
 
-    app.mainloop()
 
-place_screen()
+
+def selection_of_region():
+    var = region_screen()
+    num = str(var.get())
+    if num == "1":
+        return "north"
+    elif num == "2":
+        return "center"
+    elif num == "3":
+        return "south"
+
+region_screen()
+app.mainloop()
