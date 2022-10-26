@@ -39,7 +39,7 @@ def hobby_screen():
 
     app.mainloop()
     return selection_hobby(var)
-
-print(hobby_screen())
+#
+# print(hobby_screen())
 #
 # print(selection_hobby())

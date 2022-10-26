@@ -7,13 +7,12 @@ import hobby_screen
 
 def main():
     intro_screen.introduction_screen()
-    # region_screen.region_screen()
-    # volunteer_screen.show_volunteering()
+    volunteer_screen.show_volunteering(region_screen.region_screen(), hobby_screen.hobby_screen())
 
 
 if __name__ == '__main__':
     main()
 
-
-def get_user_event():
-    tkinter.EventType
+#
+# def get_user_event():
+#     tkinter.EventType

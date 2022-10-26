@@ -35,5 +35,5 @@ def region_screen():
     app.mainloop()
     return selection_place(var)
 
-
-print(region_screen())
+#
+# print(region_screen())
