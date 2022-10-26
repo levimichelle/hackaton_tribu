@@ -1,14 +1,14 @@
 import tkinter
-import consts
-import Screen
-import get_place
+import volunteer_screen
+import intro_screen
+import region_screen
+import hobby_screen
 
 
 def main():
-    Screen.introduction_screen()
-    Screen.region_screen()
-    Screen.hobby_screen()
-    Screen.show_volunteering()
+    intro_screen.introduction_screen()
+    # region_screen.region_screen()
+    # volunteer_screen.show_volunteering()
 
 
 if __name__ == '__main__':

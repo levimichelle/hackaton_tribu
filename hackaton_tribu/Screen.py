@@ -89,5 +89,3 @@ def show_volunteering():
     label2.pack(pady=20)
     app.mainloop()
 
-
-print("is it working?")
