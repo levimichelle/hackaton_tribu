@@ -23,7 +23,9 @@ def region_screen():
     app = set_screen()
     var = tkinter.IntVar()
     label1 = tkinter.Label(app, text="What region are you from?", bg="lightblue", font=("David", 20))
+    button = tkinter.Button(app, text="next", command=app.destroy, font=("David", 12))
     label1.pack(pady=20)
+    button.pack(padx=20, pady=30)
 
     north_button = tkinter.Radiobutton(app, text="north", bg="lightblue", variable=var, pady=5, padx=30,
                                        value=1, font=("David", 14)).pack(anchor=tkinter.CENTER)
@@ -33,7 +35,6 @@ def region_screen():
 
     south_button = tkinter.Radiobutton(app, text="south", bg="lightblue", variable=var, pady=5, padx=30,
                                        value=3, font=("David", 14)).pack(anchor=tkinter.CENTER)
-    app.mainloop()
     num = str(var.get())
     if num == "1":
         return "north"
@@ -41,18 +42,7 @@ def region_screen():
         return "center"
     elif num == "3":
         return "south"
-
-
-# def selection_of_region():
-#     var = region_screen()
-#     num = str(var.get())
-#     if num == "1":
-#         return "north"
-#     elif num == "2":
-#         return "center"
-#     elif num == "3":
-#         return "south"
-
+    app.mainloop()
 
 
 def hobby_screen():
@@ -82,7 +72,13 @@ def hobby_screen():
         return "cook"
 
 
-
 def show_volunteering():
     place_name = get_place.find_place()
     place_info = get_place.return_place_info()
+    app = set_screen()
+    label1 = tkinter.Label(app, text=f"We found you a volunteering place!\n {place_name}", bg="lightblue", font=("David", 24))
+    label1.pack(pady=20)
+    label2 = tkinter.Label(app, text=place_info, bg="lightblue", font=("David", 18))
+    label2.pack(pady=20)
+    app.mainloop()
+
