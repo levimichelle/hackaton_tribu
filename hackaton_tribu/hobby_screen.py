@@ -1,9 +1,7 @@
 import tkinter
 
 
-
-def selection_hobby():
-    var = tkinter.IntVar()
+def selection_hobby(var):
     num = str(var.get())
     if num == "1":
         return "travel"
@@ -28,20 +26,20 @@ def hobby_screen():
     next_button.pack(anchor=tkinter.SE, padx=10, pady=10, side="bottom")
 
     tkinter.Radiobutton(app, text="I enjoy traveling.", bg="lightblue", variable=var, pady=5, padx=30,
-                        value=1, font=("David", 14), command=selection_hobby()).pack(anchor=tkinter.CENTER)
+                        value=1, font=("David", 14), command=selection_hobby(var)).pack(anchor=tkinter.CENTER)
 
     tkinter.Radiobutton(app, text="I enjoy being in the sea.", bg="lightblue", variable=var, pady=5, padx=30,
-                        value=2, font=("David", 14), command=selection_hobby()).pack(anchor=tkinter.CENTER)
+                        value=2, font=("David", 14), command=selection_hobby(var)).pack(anchor=tkinter.CENTER)
 
     tkinter.Radiobutton(app, text="I enjoy creating music.", bg="lightblue", variable=var, pady=5, padx=30,
-                        value=3, font=("David", 14), command=selection_hobby()).pack(anchor=tkinter.CENTER)
+                        value=3, font=("David", 14), command=selection_hobby(var)).pack(anchor=tkinter.CENTER)
 
     tkinter.Radiobutton(app, text="I enjoy cooking.", bg="lightblue", variable=var, pady=5, padx=30,
-                        value=4, font=("David", 14), command=selection_hobby()).pack(anchor=tkinter.CENTER)
+                        value=4, font=("David", 14), command=selection_hobby(var)).pack(anchor=tkinter.CENTER)
 
     app.mainloop()
+    return selection_hobby(var)
 
-
-# hobby_screen()
+print(hobby_screen())
 #
 # print(selection_hobby())

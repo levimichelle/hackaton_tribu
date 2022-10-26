@@ -32,9 +32,8 @@ def region_screen():
     tkinter.Radiobutton(app, text="south", bg="lightblue", variable=var, pady=5, padx=30,
                         value=3, font=("David", 14), command=selection_place(var)).pack(anchor=tkinter.CENTER)
 
-    selection_place(var)
     app.mainloop()
+    return selection_place(var)
 
-#
-# region_screen()
-# print(selection_place())
+
+print(region_screen())

@@ -14,13 +14,27 @@ def set_screen():
 
 def introduction_screen():
     app = set_screen()
-    label1 = tkinter.Label(app, text="Welcome to the TribuApp!\npress 'next' to continue", bg="lightblue", font=("David", 20))
+    label1 = tkinter.Label(app, text="Welcome to TribuApp!\n press 'next' to continue", bg="lightblue", font=("David", 20))
     button = tkinter.Button(app, text="next", command=app.destroy, font=("David", 12))
     label1.pack(pady=20)
-    button.pack(anchor=tkinter.S, padx=10, pady=10, side="bottom")
+    button.pack(side="bottom")
 
-def selection_place():
+
+def region_screen():
+    app = set_screen()
     var = tkinter.IntVar()
+    label1 = tkinter.Label(app, text="What region are you from?", bg="lightblue", font=("David", 20))
+    button = tkinter.Button(app, text="next", command=app.destroy, font=("David", 12))
+    label1.pack(pady=20)
+    button.pack(side="bottom")
+    north_button = tkinter.Radiobutton(app, text="north", bg="lightblue", variable=var, pady=5, padx=30,
+                                       value=1, font=("David", 14)).pack(anchor=tkinter.CENTER)
+
+    center_button = tkinter.Radiobutton(app, text="center", bg="lightblue", variable=var, pady=5, padx=30,
+                                        value=2, font=("David", 14)).pack(anchor=tkinter.CENTER)
+
+    south_button = tkinter.Radiobutton(app, text="south", bg="lightblue", variable=var, pady=5, padx=30,
+                                       value=3, font=("David", 14)).pack(anchor=tkinter.CENTER)
     num = str(var.get())
     if num == "1":
         return "north"
@@ -28,25 +42,6 @@ def selection_place():
         return "center"
     elif num == "3":
         return "south"
-
-
-def region_screen():
-    app = set_screen()
-    var = tkinter.IntVar()
-    region_label = tkinter.Label(app, text="What region are you from?", bg="lightblue", font=("David", 20))
-    region_label.pack(pady=20)
-
-    exit_button = tkinter.Button(app, text="next", command=app.destroy, font=("David", 12))
-    exit_button.pack(anchor=tkinter.SE, padx=10, pady=10, side="bottom")
-
-    tkinter.Radiobutton(app, text="north", bg="lightblue", variable=var, pady=5, padx=30,
-                        value=1, font=("David", 14), command=selection_place()).pack(anchor=tkinter.CENTER)
-
-    tkinter.Radiobutton(app, text="center", bg="lightblue", variable=var, pady=5, padx=30,
-                        value=2, font=("David", 14), command=selection_place()).pack(anchor=tkinter.CENTER)
-
-    tkinter.Radiobutton(app, text="south", bg="lightblue", variable=var, pady=5, padx=30,
-                        value=3, font=("David", 14), command=selection_place()).pack(anchor=tkinter.CENTER)
     app.mainloop()
 
 
