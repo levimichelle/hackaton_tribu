@@ -1,13 +1,9 @@
 import tkinter
 
-app = tkinter.Tk()
-app.title("Volunteer Quiz")
-app.geometry("350x350+500+100")
-app.configure(bg="lightblue")
-var = tkinter.IntVar()
 
 
 def selection_hobby():
+    var = tkinter.IntVar()
     num = str(var.get())
     if num == "1":
         return "travel"
@@ -20,8 +16,12 @@ def selection_hobby():
 
 
 def hobby_screen():
-    hobby_label = tkinter.Label(app, text="Which of these would you say\nis true about you?", bg="lightblue",
-                                font=("David", 20))
+    app = tkinter.Tk()
+    app.title("Volunteer Quiz")
+    app.geometry("350x350+500+100")
+    app.configure(bg="lightblue")
+    var = tkinter.IntVar()
+    hobby_label = tkinter.Label(app, text="Which of these would you say\nis true about you?", bg="lightblue", font=("David", 20))
     hobby_label.pack(pady=20)
 
     next_button = tkinter.Button(app, text="next →", command=app.destroy, font=("David", 12))
@@ -42,6 +42,6 @@ def hobby_screen():
     app.mainloop()
 
 
-hobby_screen()
-
-print(selection_hobby())
+# hobby_screen()
+#
+# print(selection_hobby())
