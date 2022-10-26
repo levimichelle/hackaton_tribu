@@ -1,8 +1,8 @@
 import tkinter
-
 import consts
 import Screen
 import get_place
+
 
 def main():
     Screen.introduction_screen()

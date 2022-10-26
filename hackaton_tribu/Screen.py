@@ -7,16 +7,17 @@ import get_place
 def set_screen():
     app = tkinter.Tk()
     app.title("Volunteer Quiz")
-    app.geometry("350x350+500+100")
+    app.geometry("400x400+500+100")
     app.configure(bg="lightblue")
     return app
 
 
 def introduction_screen():
     app = set_screen()
-    var = tkinter.IntVar()
-    label1 = tkinter.Label(app, text="Welcome to TribuApp!\n press enter to continue", bg="lightblue", font=("David", 20))
+    label1 = tkinter.Label(app, text="Welcome to TribuApp!\n press 'next' to continue", bg="lightblue", font=("David", 20))
+    button = tkinter.Button(app, text="next", command=app.destroy, font=("David", 12))
     label1.pack(pady=20)
+    button.pack(side="bottom")
 
 
 def region_screen():
@@ -25,8 +26,7 @@ def region_screen():
     label1 = tkinter.Label(app, text="What region are you from?", bg="lightblue", font=("David", 20))
     button = tkinter.Button(app, text="next", command=app.destroy, font=("David", 12))
     label1.pack(pady=20)
-    button.pack(padx=20, pady=30)
-
+    button.pack(side="bottom")
     north_button = tkinter.Radiobutton(app, text="north", bg="lightblue", variable=var, pady=5, padx=30,
                                        value=1, font=("David", 14)).pack(anchor=tkinter.CENTER)
 
@@ -49,7 +49,9 @@ def hobby_screen():
     app = set_screen()
     var = tkinter.IntVar()
     label1 = tkinter.Label(app, text="What is your hobby? ", bg="lightblue", font=("David", 20))
+    button = tkinter.Button(app, text="next", command=app.destroy, font=("David", 12))
     label1.pack(pady=20)
+    button.pack(side="bottom")
     travel_button = tkinter.Radiobutton(app, text="Travel", bg="lightblue", variable=var, pady=5, padx=30,
                                        value=1, font=("David", 14)).pack(anchor=tkinter.CENTER)
 
@@ -59,8 +61,7 @@ def hobby_screen():
     music_button = tkinter.Radiobutton(app, text="Music", bg="lightblue", variable=var, pady=5, padx=30,
                                        value=3, font=("David", 14)).pack(anchor=tkinter.CENTER)
     cook_button = tkinter.Radiobutton(app, text="Cook", bg="lightblue", variable=var, pady=5, padx=30,
-                                       value=3, font=("David", 14)).pack(anchor=tkinter.CENTER)
-    app.mainloop()
+                                       value=4, font=("David", 14)).pack(anchor=tkinter.CENTER)
     num = str(var.get())
     if num == "1":
         return "travel"
@@ -70,6 +71,7 @@ def hobby_screen():
         return "music"
     elif num == "4":
         return "cook"
+    app.mainloop()
 
 
 def show_volunteering():
